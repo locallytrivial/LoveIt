@@ -3,7 +3,7 @@
 {{- define "content" -}}
     {{- /* Auto TOC */ -}}
     {{- $toc := .Scratch.Get "toc" | default dict -}}
-    {{- if (not isset $toc.enable) -}}
+    {{- if (not (isset $toc.enable)) -}}
         {{- $toc = dict "enable" false | merge $toc -}}
     {{- end -}}
     {{- $toc = dict "auto" true | merge $toc -}}
