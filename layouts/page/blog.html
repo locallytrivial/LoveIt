@@ -16,6 +16,7 @@
         {{- end -}}
 
         {{- /* Posts */ -}}
+        <div class="posts">
         <!--- Posts --->
         {{- /* Paginate */ -}}
         {{- $pages := .Site.RegularPages -}}
@@ -35,5 +36,6 @@
             {{- end -}}
             {{- partial "paginator.html" . -}}
         {{- end -}}
+        </div>
     </div>
 {{- end -}}
