@@ -5,7 +5,7 @@
     {{- $profile := .Site.Params.home.profile -}}
     {{- $posts := .Site.Params.blog.posts -}}
 
-    <div class="page home"{{ if ne $posts.enable false }} posts{{ end }}>
+    <div class="page home posts">
         {{- /* Content */ -}}
         {{- if .Content -}}
             <div class="single">
