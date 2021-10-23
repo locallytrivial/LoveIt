@@ -16,6 +16,7 @@
 {{- end -}}
 
 {{- $options = dict "Resources" .Page.Resources | merge $options -}}
+{{- $options = dict "Linked" true | merge $options -}}
 
 {{- with $caption -}}
     <figure{{ with cond $.IsNamedParams ($.Get "class") "" }} class="{{ . }}"{{ end }}>
