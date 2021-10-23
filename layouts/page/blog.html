@@ -19,10 +19,10 @@
         <div class="posts">
         <!--- Posts --->
         {{- /* Paginate */ -}}
-            {{- range .Site.RegularPages -}}
+            {{- range where .Site.RegularPages "Type" "posts" -}}
                 {{- .Render "summary" -}}
             {{- end -}}
-        {{- $pages := .Site.RegularPages -}}
+        {{- $pages := where .Site.RegularPages "Type" "posts" -}}
         {{- if $pages -}}
             <!--- pages not null --->
         {{- else -}}
