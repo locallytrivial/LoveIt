@@ -22,6 +22,7 @@
     <!--            {{- range where .Site.RegularPages "Type" "posts" -}}-->
     <!--                {{- .Render "summary" -}}-->
     <!--            {{- end -}}-->
+            {{- $pages := where .Site.RegularPages "Type" "posts" -}}
             {{- with $posts.paginate | default .Site.Params.paginate -}}
                 {{- $pages = $.Paginate $pages . -}}
             {{- else -}}
