@@ -19,11 +19,6 @@
         {{- if ne $posts.enable false -}}
             {{- /* Paginate */ -}}
             {{- $pages := where .Site.RegularPages "Type" "posts" -}}
-            {{- if .Site.Params.page.hiddenFromHomePage -}}
-                {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
-            {{- else -}}
-                {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
-            {{- end -}}
             {{- with $posts.paginate | default .Site.Params.paginate -}}
                 {{- $pages = $.Paginate $pages . -}}
             {{- else -}}
