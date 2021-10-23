@@ -3,7 +3,7 @@
 {{- define "content" -}}
     {{- $params := .Scratch.Get "params" -}}
     {{- $profile := .Site.Params.home.profile -}}
-    {{- $posts := .Site.Params.home.posts -}}
+    {{- $posts := .Site.Params.blog.posts -}}
 
     <div class="page home"{{ if ne $posts.enable false }} posts{{ end }}>
         {{- /* Content */ -}}
@@ -16,7 +16,7 @@
         {{- end -}}
 
         {{- /* Posts */ -}}
-        {{- if ne $posts.enable false | and .Site.RegularPages -}}
+        {{- if ne $posts.enable false -}}
             {{- /* Paginate */ -}}
             {{- $pages := where .Site.RegularPages "Type" "posts" -}}
             {{- if .Site.Params.page.hiddenFromHomePage -}}
