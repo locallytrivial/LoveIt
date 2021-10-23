@@ -22,15 +22,6 @@
                 {{- range where .Site.RegularPages "Type" "posts" -}}
                     {{- .Render "summary" -}}
                 {{- end -}}
-<!--            {{- $pages := where .Site.RegularPages "Type" "posts" -}}-->
-<!--            {{- with $posts.paginate | default .Site.Params.paginate -}}-->
-<!--                {{- $pages = $.Paginate $pages . -}}-->
-<!--            {{- else -}}-->
-<!--                {{- $pages = .Paginate $pages -}}-->
-<!--            {{- end -}}-->
-<!--            {{- range $pages.Pages -}}-->
-<!--                {{- .Render "summary" -}}-->
-<!--            {{- end -}}-->
             {{- partial "paginator.html" . -}}
         </div>
     </div>
