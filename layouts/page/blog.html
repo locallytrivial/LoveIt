@@ -24,9 +24,11 @@
         {{- else -}}
             {{- $pages = .Paginate $pages -}}
         {{- end -}}
-        {{- range $pages.Pages -}}
-            {{- .Render "summary" -}}
+        {{- if $pages.Pages -}}
+            {{- range $pages.Pages -}}
+                {{- .Render "summary" -}}
+            {{- end -}}
+            {{- partial "paginator.html" . -}}
         {{- end -}}
-        {{- partial "paginator.html" . -}}
     </div>
 {{- end -}}
