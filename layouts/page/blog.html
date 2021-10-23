@@ -19,6 +19,9 @@
         <div class="posts">
         <!--- Posts --->
         {{- /* Paginate */ -}}
+            {{- range .Site.RegularPages -}}
+                {{- .Render "summary" -}}
+            {{- end -}}
         {{- $pages := .Site.RegularPages -}}
         {{- if $pages -}}
             <!--- pages not null --->
