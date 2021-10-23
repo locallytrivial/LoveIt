@@ -19,6 +19,9 @@
         <!--- Posts --->
         {{- /* Paginate */ -}}
         {{- $pages := where .Site.RegularPages  "Type" "posts" -}}
+        {{- if $pages -}}
+            <!--- pages not null --->
+        {{- end -}}
         {{- with $posts.paginate | default .Site.Params.paginate -}}
             {{- $pages = $.Paginate $pages . -}}
         {{- else -}}
